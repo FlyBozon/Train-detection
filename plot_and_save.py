@@ -22,11 +22,9 @@ intervals = deque(maxlen=10)
 
 os.makedirs("data", exist_ok=True)
 
-# Generate timestamped filename inside the "data" folder
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 csv_filename = os.path.join("data", f"distance_log_{timestamp}.csv")
 
-# Open CSV file for writing
 csv_file = open(csv_filename, mode='w', newline='')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(["timestamp", "distance_m"]) 
